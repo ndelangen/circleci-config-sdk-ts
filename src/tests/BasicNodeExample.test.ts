@@ -34,7 +34,6 @@ describe('Generate a Hello World config', () => {
   // Add Jobs to Workflow
   myWorkflow.addJob(nodeTestJob);
 
-  // const configOutputFile = myConfig.stringify()
   it('Should generate a valid config file', () => {
     const expectedResult = {
       version: 2.1,

@@ -1,0 +1,52 @@
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type StringParameter } from '../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../types/Command.types';
+import { type Command } from '../Command';
+
+/**
+ * Special step used to upload and store test results for a build. Test results are visible on the CircleCI web application, under each build’s “Test Summary” section. Storing test results is useful for timing analysis of your test suites.
+ * @see {@link https://circleci.com/docs/configuration-reference#storetestresults}
+ */
+export class StoreTestResults implements Command {
+  parameters: StoreTestResultsParameters;
+  constructor(parameters: StoreTestResultsParameters) {
+    this.parameters = parameters;
+  }
+  /**
+   * Generate StoreTestResults Command shape.
+   * @returns The generated JSON for the StoreTestResults Commands.
+   */
+  generate(): StoreTestResultsCommandShape {
+    return {
+      store_test_results: { ...this.parameters },
+    } as StoreTestResultsCommandShape;
+  }
+
+  get name(): StringParameter {
+    return 'store_test_results';
+  }
+
+  get generableType(): GenerableEnum {
+    return GenerableEnum.STORE_TEST_RESULTS;
+  }
+}
+
+/**
+ * Command parameters for the StoreTestResults command
+ */
+export interface StoreTestResultsParameters extends CommandParameters {
+  /**
+   * Path (absolute, or relative to your working_directory) to directory containing subdirectories of JUnit XML or Cucumber JSON test metadata files
+   */
+  path: StringParameter;
+}
+
+/**
+ * Generated Shape of the StoreTestResults command.
+ */
+interface StoreTestResultsCommandShape extends CommandShape {
+  store_test_results: StoreTestResultsParameters;
+}

@@ -1,17 +1,6 @@
 # CircleCI Config SDK
 
-## Warning ⚠️
-**This repo is no longer maintained, supported, or monitored by CircleCI. It will be archived in the next 90 days. It can be forked for those that would like to continue using it.**
-
 **This SDK is provided on an ‘as-is’ and ‘as available’ basis without any warranties of any kind. CircleCI disclaims all warranties, express or implied, including, but not limited to, all implied warranties of merchantability, title, fitness for a particular purpose, and noninfringement.**
-
-
-[![GitHub](https://img.shields.io/github/license/CircleCI-Public/circleci-config-sdk-ts)](https://github.com/CircleCI-Public/circleci-config-sdk-ts/blob/main/LICENSE)
-[![CircleCI](https://img.shields.io/circleci/build/gh/CircleCI-Public/circleci-config-sdk-ts/main?logo=circleci&token=5fcb5715c180e9f7d3a076d95779cd88f75d2093)](https://app.circleci.com/pipelines/github/CircleCI-Public/circleci-config-sdk-ts)
-[![npm](https://img.shields.io/npm/v/@circleci/circleci-config-sdk?logo=npm)](https://www.npmjs.com/package/@circleci/circleci-config-sdk)
-[![codecov](https://codecov.io/gh/CircleCI-Public/circleci-config-sdk-ts/branch/main/graph/badge.svg?token=Z4C4RXABS7)](https://codecov.io/gh/CircleCI-Public/circleci-config-sdk-ts)
-[![npm](https://img.shields.io/npm/dm/@circleci/circleci-config-sdk?logo=npm)](https://www.npmjs.com/package/@circleci/circleci-config-sdk)
-![GitHub Repo stars](https://img.shields.io/github/stars/CircleCI-Public/circleci-config-sdk-ts?style=social)
 
 Create and manage your [CircleCI](https://circleci.com/) configuration files with JavaScript and
 TypeScript.
@@ -44,27 +33,19 @@ TypeScript.
 Using npm:
 
 ```shell
-$ npm i @circleci/circleci-config-sdk
+$ npm i @ndelangen/circleci-config-sdk
 ```
 
 Using yarn:
 
 ```shell
-$ yarn add @circleci/circleci-config-sdk
+$ yarn add @ndelangen/circleci-config-sdk
 ```
 
 #### Usage
 
-In Browser:
-
-```typescript
-import CircleCI from '@circleci/circleci-config-sdk';
-```
-
-In Node.js:
-
 ```javascript
-const CircleCI = require('@circleci/circleci-config-sdk');
+import CircleCI from "@ndelangen/circleci-config-sdk";
 ```
 
 ### Example
@@ -72,21 +53,22 @@ const CircleCI = require('@circleci/circleci-config-sdk');
 Generate a CircleCI config using TypeScript/Javascript, properly typed for full
 IntelliSense support.
 
-```typescript
-const CircleCI = require('@circleci/circleci-config-sdk');
+```ts
+import CircleCI from "@ndelangen/circleci-config-sdk";
+
 // Instantiate new Config
 const myConfig = new CircleCI.Config();
 // Create new Workflow
-const myWorkflow = new CircleCI.Workflow('myWorkflow');
+const myWorkflow = new CircleCI.Workflow("myWorkflow");
 myConfig.addWorkflow(myWorkflow);
 
 // Create an executor instance
 // Executors are used directly in jobs
 // and do not need to be added to the config separately
-const nodeExecutor = new CircleCI.executors.DockerExecutor('cimg/node:lts');
+const nodeExecutor = new CircleCI.executors.DockerExecutor("cimg/node:lts");
 
 // Create Job and add it to the config
-const nodeTestJob = new CircleCI.Job('node-test', nodeExecutor);
+const nodeTestJob = new CircleCI.Job("node-test", nodeExecutor);
 myConfig.addJob(nodeTestJob);
 
 // Add steps to job
@@ -94,15 +76,15 @@ nodeTestJob
   .addStep(new CircleCI.commands.Checkout())
   .addStep(
     new CircleCI.commands.Run({
-      command: 'npm install',
-      name: 'NPM Install',
-    }),
+      command: "npm install",
+      name: "NPM Install",
+    })
   )
   .addStep(
     new CircleCI.commands.Run({
-      command: 'npm run test',
-      name: 'Run tests',
-    }),
+      command: "npm run test",
+      name: "Run tests",
+    })
   );
 
 // Add Jobs to Workflow
@@ -112,7 +94,7 @@ myWorkflow.addJob(nodeTestJob);
 const MyYamlConfig = myConfig.stringify();
 
 // Save the config to a file in Node.js or the browser. Note, use in the browser requires user interaction.
-myConfig.writeFile('config.yml');
+myConfig.writeFile("config.yml");
 ```
 
 `MyYamlConfig` will hold the following string (A valid CircleCI Config).

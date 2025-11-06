@@ -1,8 +1,5 @@
 import { type GenerableEnum } from '../Config/exports/Mapping';
 
-/**
- * @internal
- */
 export interface Generable {
   /**
    * Generate the CircleCI YAML equivalent JSON for config compilation

@@ -1,10 +1,13 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { OrbRef } from '../../../../Orb';
-import { StringParameter } from '../../../Parameters/types';
-import { CommandParameterLiteral } from '../../../Parameters/types/CustomParameterLiterals.types';
-import { CommandParameters, CommandShape } from '../../types/Command.types';
-import { Command } from '../Command';
-import { ReusableCommand } from './ReusableCommand';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type OrbRef } from '../../../../Orb';
+import { type StringParameter } from '../../../Parameters/types';
+import { type CommandParameterLiteral } from '../../../Parameters/types/CustomParameterLiterals.types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../types/Command.types';
+import { type Command } from '../Command';
+import { type ReusableCommand } from './ReusableCommand';
 
 /**
  * Use a reusable command with parameters.
@@ -47,7 +50,7 @@ export class ReusedCommand implements Command {
     return { ...this.parameters };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.REUSED_COMMAND;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.REUSED_COMMAND;
   }
 }

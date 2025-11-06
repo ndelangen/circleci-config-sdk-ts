@@ -1,12 +1,13 @@
-import { Generable } from '../..';
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { type Generable } from '../..';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { OrbRef } from '../../../Orb';
-import { ExecutorParameterTypes } from '../../Parameters/types/ComponentParameters.types';
-import { ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
+import { type ExecutorParameterTypes } from '../../Parameters/types/ComponentParameters.types';
+import { type ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
 import {
   ReusedExecutorShape,
   ReusedExecutorShapeContents,
 } from '../types/ReusableExecutor.types';
+
 import { ReusableExecutor } from './ReusableExecutor';
 /**
  * A 2.1 wrapper for reusing CircleCI executor.
@@ -56,8 +57,8 @@ export class ReusedExecutor implements Generable {
     return this._executor.name;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.REUSED_EXECUTOR;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.REUSED_EXECUTOR;
   }
 
   get executor(): ReusableExecutor | OrbRef<ExecutorParameterLiteral> {

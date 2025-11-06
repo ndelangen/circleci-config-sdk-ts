@@ -1,9 +1,9 @@
-import { Generable } from '../..';
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { type Generable } from '../..';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { CustomParametersList } from '../../Parameters';
-import { Parameterized } from '../../Parameters/exports/Parameterized';
-import { ExecutorParameterTypes } from '../../Parameters/types/ComponentParameters.types';
-import { ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
+import { type Parameterized } from '../../Parameters/exports/Parameterized';
+import { type ExecutorParameterTypes } from '../../Parameters/types/ComponentParameters.types';
+import { type ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
 import {
   ReusableExecutorJobRefShape,
   ReusableExecutorsShape,
@@ -71,8 +71,8 @@ export class ReusableExecutor
     return this;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.REUSABLE_EXECUTOR;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.REUSABLE_EXECUTOR;
   }
 
   reuse(parameters?: Record<string, ExecutorParameterTypes>): ReusedExecutor {

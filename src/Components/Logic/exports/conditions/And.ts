@@ -1,5 +1,5 @@
 import { identityOrTruthy } from '.';
-import { GenerableType } from '../../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
 import { AndConditionShape, ConditionOrValue } from '../../types';
 import { Condition } from '../Condition';
 
@@ -23,7 +23,7 @@ export class And extends Condition {
     return { and: this.conditions.map((c) => c.generate()) };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.AND;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.AND;
   }
 }

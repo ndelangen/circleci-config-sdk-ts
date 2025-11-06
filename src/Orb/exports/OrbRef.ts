@@ -1,6 +1,6 @@
 import { CustomParametersList } from '../../Components/Parameters';
 import { AnyParameterLiteral } from '../../Components/Parameters/types/CustomParameterLiterals.types';
-import { GenerableType } from '../../Config/exports/Mapping';
+import { GenerableEnum } from '../../Config/exports/Mapping';
 import { OrbImport } from './OrbImport';
 
 /**
@@ -22,8 +22,8 @@ export class OrbRef<Literal extends AnyParameterLiteral> {
     this._orb = orb;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.ORB_REF;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.ORB_REF;
   }
 
   get name(): string {

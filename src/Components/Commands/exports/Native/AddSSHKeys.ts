@@ -1,7 +1,13 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { ListParameter, StringParameter } from '../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../types/Command.types';
-import { Command } from '../Command';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import {
+  type ListParameter,
+  type StringParameter,
+} from '../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../types/Command.types';
+import { type Command } from '../Command';
 
 /**
  * The AddSSHKeys command is a special step that adds SSH keys from a project’s settings to a container. Also configures SSH to use these keys.
@@ -26,8 +32,8 @@ export class AddSSHKeys implements Command {
     return 'add_ssh_keys';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.ADD_SSH_KEYS;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.ADD_SSH_KEYS;
   }
 }
 

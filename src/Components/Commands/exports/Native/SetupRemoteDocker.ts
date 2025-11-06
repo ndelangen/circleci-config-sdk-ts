@@ -1,7 +1,10 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { StringParameter } from '../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../types/Command.types';
-import { Command } from '../Command';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type StringParameter } from '../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../types/Command.types';
+import { type Command } from '../Command';
 
 /**
  * Creates a remote Docker environment configured to execute Docker commands.
@@ -28,8 +31,8 @@ export class SetupRemoteDocker implements Command {
     return 'setup_remote_docker';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.SETUP_REMOTE_DOCKER;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.SETUP_REMOTE_DOCKER;
   }
 
   /**

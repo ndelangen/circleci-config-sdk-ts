@@ -1,12 +1,12 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
-import { AnyCommandShape } from '../../Commands/types/Command.types';
-import { Generable } from '../../index';
-import { StepsParameter } from '../../Parameters/types';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
+import { type AnyCommandShape } from '../../Commands/types/Command.types';
+import { type Generable } from '../../index';
+import { type StepsParameter } from '../../Parameters/types';
 import {
-  WorkflowJobContentsShape,
-  WorkflowJobParameters,
-  WorkflowJobParametersShape,
-  WorkflowJobShape,
+  type WorkflowJobContentsShape,
+  type WorkflowJobParameters,
+  type WorkflowJobParametersShape,
+  type WorkflowJobShape,
 } from '../types/WorkflowJob.types';
 
 /**
@@ -47,8 +47,8 @@ export abstract class WorkflowJobAbstract implements Generable {
     return parameters;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.WORKFLOW_JOB;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.WORKFLOW_JOB;
   }
 
   private generateSteps(

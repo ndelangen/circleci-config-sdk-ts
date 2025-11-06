@@ -1,17 +1,20 @@
-export { AddSSHKeys, AddSSHKeysParameters } from './exports/Native/AddSSHKeys';
-export { Checkout, CheckoutParameters } from './exports/Native/Checkout';
-export { Run, RunParameters } from './exports/Native/Run';
+export {
+  AddSSHKeys,
+  type AddSSHKeysParameters,
+} from './exports/Native/AddSSHKeys';
+export { Checkout, type CheckoutParameters } from './exports/Native/Checkout';
+export { Run, type RunParameters } from './exports/Native/Run';
 export {
   SetupRemoteDocker,
-  SetupRemoteDockerParameters,
+  type SetupRemoteDockerParameters,
 } from './exports/Native/SetupRemoteDocker';
 export {
   StoreArtifacts,
-  StoreArtifactsParameters,
+  type StoreArtifactsParameters,
 } from './exports/Native/StoreArtifacts';
 export {
   StoreTestResults,
-  StoreTestResultsParameters,
+  type StoreTestResultsParameters,
 } from './exports/Native/StoreTestResults';
 
 export * as cache from './exports/Native/Cache';

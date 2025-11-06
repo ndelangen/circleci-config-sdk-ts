@@ -1,15 +1,15 @@
-import { Generable } from '../../..';
-import { GenerableType } from '../../../../Config/exports/Mapping';
+import { type Generable } from '../../..';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
 import { CustomParametersList } from '../../../Parameters';
-import { Parameterized } from '../../../Parameters/exports/Parameterized';
-import { CommandParameterLiteral } from '../../../Parameters/types/CustomParameterLiterals.types';
+import { type Parameterized } from '../../../Parameters/exports/Parameterized';
+import { type CommandParameterLiteral } from '../../../Parameters/types/CustomParameterLiterals.types';
 import {
-  AnyCommandShape,
-  CommandParameters,
-  ReusableCommandBodyShape,
-  ReusableCommandShape,
+  type AnyCommandShape,
+  type CommandParameters,
+  type ReusableCommandBodyShape,
+  type ReusableCommandShape,
 } from '../../types/Command.types';
-import { Command } from '../Command';
+import { type Command } from '../Command';
 import { ReusedCommand } from './ReusedCommand';
 
 /**
@@ -97,7 +97,7 @@ export class ReusableCommand
     return this;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.REUSABLE_COMMAND;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.REUSABLE_COMMAND;
   }
 }

@@ -1,16 +1,16 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { Executable } from '../../../Executors/types/ExecutorParameters.types';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type Executable } from '../../../Executors/types/ExecutorParameters.types';
 import {
-  StringParameter,
-  EnvironmentParameter,
-  BooleanParameter,
+  type StringParameter,
+  type EnvironmentParameter,
+  type BooleanParameter,
 } from '../../../Parameters/types';
 import {
-  CommandShape,
-  CommandShorthandShape,
-  CommandParameters,
+  type CommandShape,
+  type CommandShorthandShape,
+  type CommandParameters,
 } from '../../types/Command.types';
-import { Command } from '../Command';
+import { type Command } from '../Command';
 
 /**
  * The Run step is used for invoking all command-line programs.
@@ -60,8 +60,8 @@ export class Run implements Command {
     return this;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.RUN;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.RUN;
   }
 }
 

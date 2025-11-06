@@ -1,7 +1,7 @@
-import { Generable } from '../..';
-import { GenerableType } from '../../../Config/exports/Mapping';
-import { AnyConditionShape } from '../types';
-import { Condition } from './Condition';
+import { type Generable } from '../..';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
+import { type AnyConditionShape } from '../types';
+import { type Condition } from './Condition';
 
 /**
  * 2.1 Conditional logic class component.
@@ -17,7 +17,7 @@ export class When implements Generable {
     return this.condition.generate();
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.WHEN;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.WHEN;
   }
 }

@@ -1,9 +1,9 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
 import { ConditionValue } from '../../types';
 import { Condition } from '../Condition';
 
 export class Truthy extends Condition {
-  constructor(private value?: ConditionValue) {
+  constructor(private value?: ConditionValue | undefined) {
     super();
   }
 
@@ -19,7 +19,7 @@ export class Truthy extends Condition {
     return this.value;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.TRUTHY;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.TRUTHY;
   }
 }

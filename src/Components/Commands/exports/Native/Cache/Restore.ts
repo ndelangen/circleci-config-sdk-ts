@@ -1,7 +1,13 @@
-import { GenerableType } from '../../../../../Config/exports/Mapping';
-import { ListParameter, StringParameter } from '../../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../../types/Command.types';
-import { Command } from '../../Command';
+import { GenerableEnum } from '../../../../../Config/exports/Mapping';
+import {
+  type ListParameter,
+  type StringParameter,
+} from '../../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../../types/Command.types';
+import { type Command } from '../../Command';
 /**
  * Restores a previously saved cache based on a key. A cache must have been previously created using the Save step.
  * @see {@link https://circleci.com/docs/configuration-reference#restorecache}
@@ -25,8 +31,8 @@ export class Restore implements Command {
     return 'restore_cache';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.RESTORE;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.RESTORE;
   }
 }
 

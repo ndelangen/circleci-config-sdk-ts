@@ -1,8 +1,8 @@
-import { Command } from '../../Commands/exports/Command';
-import { Executor } from '../../Executors/exports/Executor';
+import { type Command } from '../../Commands/exports/Command';
+import { type Executor } from '../../Executors/exports/Executor';
 import {
-  AnyParameterLiteral,
-  EnumParameterLiteral,
+  type AnyParameterLiteral,
+  type EnumParameterLiteral,
 } from './CustomParameterLiterals.types';
 import * as literals from './CustomParameterLiterals.types';
 import * as components from './ComponentParameters.types';

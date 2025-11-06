@@ -1,4 +1,4 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { ExecutorLiteral, ExecutorShape } from '../types/Executor.types';
 import {
   WindowsExecutorShape,
@@ -40,8 +40,8 @@ export class WindowsExecutor extends Executor<WindowsResourceClass> {
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.WINDOWS_EXECUTOR;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.WINDOWS_EXECUTOR;
   }
 
   get executorLiteral(): ExecutorLiteral {

@@ -1,12 +1,12 @@
 import {
-  CommandParameterTypes,
-  ComponentParameter,
+  type CommandParameterTypes,
+  type ComponentParameter,
 } from '../../Parameters/types/ComponentParameters.types';
-import { CustomParametersListShape } from '../../Parameters/types';
-import { GenerableType } from '../../../Config/exports/Mapping';
-import { Command } from '../exports/Command';
-import { CustomParametersList } from '../../Parameters';
-import { CommandParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
+import { type CustomParametersListShape } from '../../Parameters/types';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
+import { type Command } from '../exports/Command';
+import { type CustomParametersList } from '../../Parameters';
+import { type CommandParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
 
 export type CommandType<T> = Extract<string | number, T>;
 
@@ -53,7 +53,7 @@ export type NativeCommandLiteral =
 
 export type CommandSubtypeMap = {
   [key in NativeCommandLiteral]: {
-    generableType: GenerableType;
+    generableType: GenerableEnum;
     parse: (args?: CommandParameters) => Command;
   };
 };

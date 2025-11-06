@@ -1,7 +1,7 @@
-import { CustomParametersList } from '..';
-import { Generable } from '../..';
-import { Config } from '../../../Config';
-import { AnyParameterLiteral } from '../types/CustomParameterLiterals.types';
+import { type CustomParametersList } from '..';
+import { type Generable } from '../../index';
+import { type Config } from '../../../Config';
+import { type AnyParameterLiteral } from '../types/CustomParameterLiterals.types';
 
 /**
  * Interface implemented on components to enforce parameter functionality.

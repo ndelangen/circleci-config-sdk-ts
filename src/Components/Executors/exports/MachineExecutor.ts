@@ -1,4 +1,4 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { ExecutorLiteral } from '../types/Executor.types';
 import {
   MachineExecutorShape,
@@ -35,8 +35,8 @@ export class MachineExecutor extends Executor<MachineResourceClass> {
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.MACHINE_EXECUTOR;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.MACHINE_EXECUTOR;
   }
 
   get executorLiteral(): ExecutorLiteral {

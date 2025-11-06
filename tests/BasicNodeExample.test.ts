@@ -1,5 +1,7 @@
 import * as YAML from 'yaml';
 import * as CircleCI from '../src/index';
+import { describe, it, expect } from 'vitest';
+
 describe('Generate a Hello World config', () => {
   // Instantiate new Config
   const myConfig = new CircleCI.Config();

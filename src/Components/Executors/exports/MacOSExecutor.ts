@@ -1,4 +1,4 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { ExecutorLiteral } from '../types/Executor.types';
 import {
   MacOSExecutorShape,
@@ -26,8 +26,8 @@ export class MacOSExecutor extends Executor<MacOSResourceClass> {
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.MACOS_EXECUTOR;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.MACOS_EXECUTOR;
   }
 
   get executorLiteral(): ExecutorLiteral {

@@ -1,8 +1,8 @@
-import { Generable } from '../../Components';
+import { type Generable } from '../../Components';
 import {
-  GenerableType,
-  ParameterizedComponent,
-  ParameterSubtype,
+  type GenerableEnum,
+  type ParameterizedComponentEnum,
+  type ParameterSubEnum,
 } from '../exports/Mapping';
 
 // Copied from AJV in order to avoid a dependency on it.
@@ -20,14 +20,14 @@ export interface SchemaObject extends _SchemaObject {
   [x: string]: unknown; // AJV uses "any"
 }
 
-export type GenerableSubtypes = ParameterSubtype | ParameterizedComponent;
+export type GenerableSubtypes = ParameterSubEnum | ParameterizedComponentEnum;
 
 export type GenerableSubTypesMap = {
-  [GenerableType.CUSTOM_PARAMETER]: {
+  [GenerableEnum.CUSTOM_PARAMETER]: {
     [key in GenerableSubtypes]: SchemaObject;
   };
-  [GenerableType.CUSTOM_PARAMETERS_LIST]: {
-    [key in ParameterizedComponent]: SchemaObject;
+  [GenerableEnum.CUSTOM_PARAMETERS_LIST]: {
+    [key in ParameterizedComponentEnum]: SchemaObject;
   };
 };
 

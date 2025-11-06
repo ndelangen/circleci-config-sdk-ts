@@ -1,7 +1,10 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { StringParameter } from '../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../types/Command.types';
-import { Command } from '../Command';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type StringParameter } from '../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../types/Command.types';
+import { type Command } from '../Command';
 
 /**
  * Step to store artifacts (for example logs, binaries, etc) to be available in the web app or through the API.
@@ -26,8 +29,8 @@ export class StoreArtifacts implements Command {
     return 'store_artifacts';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.STORE_ARTIFACTS;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.STORE_ARTIFACTS;
   }
 }
 /**

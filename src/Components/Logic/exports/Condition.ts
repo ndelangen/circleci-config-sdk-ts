@@ -1,10 +1,10 @@
-import { Generable } from '../..';
-import { GenerableType } from '../../../Config/exports/Mapping';
-import { AnyConditionShape } from '../types';
-import { Evaluable } from './Evaluable';
+import { type Generable } from '../..';
+import { type GenerableEnum } from '../../../Config/exports/Mapping';
+import { type AnyConditionShape } from '../types';
+import { type Evaluable } from './Evaluable';
 
 export abstract class Condition implements Generable, Evaluable<boolean> {
   abstract evaluate(): boolean;
   abstract generate(flatten?: boolean): AnyConditionShape;
-  abstract get generableType(): GenerableType;
+  abstract get generableType(): GenerableEnum;
 }

@@ -1,16 +1,16 @@
-import { Command } from '../../Commands/exports/Command';
-import { Executor } from '../../Executors';
-import { ReusedExecutor } from '../../Executors/exports/ReusedExecutor';
+import { type Command } from '../../Commands/exports/Command';
+import { type Executor } from '../../Executors';
+import { type ReusedExecutor } from '../../Executors/exports/ReusedExecutor';
 import {
-  AnyExecutorShape,
-  ExecutableProperties,
+  type AnyExecutorShape,
+  type ExecutableProperties,
 } from '../../Executors/types/Executor.types';
 import { CustomParametersList } from '../../Parameters';
 import {
-  CustomParametersListShape,
-  EnvironmentParameter,
+  type CustomParametersListShape,
+  type EnvironmentParameter,
 } from '../../Parameters/types';
-import { JobParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
+import { type JobParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
 
 export type JobContentsShape = {
   steps: unknown[];

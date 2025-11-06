@@ -1,7 +1,10 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { StringParameter } from '../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../types/Command.types';
-import { Command } from '../Command';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type StringParameter } from '../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../types/Command.types';
+import { type Command } from '../Command';
 
 /**
  * Special step used to upload and store test results for a build. Test results are visible on the CircleCI web application, under each build’s “Test Summary” section. Storing test results is useful for timing analysis of your test suites.
@@ -26,8 +29,8 @@ export class StoreTestResults implements Command {
     return 'store_test_results';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.STORE_TEST_RESULTS;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.STORE_TEST_RESULTS;
   }
 }
 

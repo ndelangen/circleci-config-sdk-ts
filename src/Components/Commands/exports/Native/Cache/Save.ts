@@ -1,7 +1,13 @@
-import { GenerableType } from '../../../../../Config/exports/Mapping';
-import { ListParameter, StringParameter } from '../../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../../types/Command.types';
-import { Command } from '../../Command';
+import { GenerableEnum } from '../../../../../Config/exports/Mapping';
+import {
+  type ListParameter,
+  type StringParameter,
+} from '../../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../../types/Command.types';
+import { type Command } from '../../Command';
 
 /**
  * Generates and stores a cache of a file or directory of files such as dependencies or source code in our object storage. Later jobs can restore this cache.
@@ -24,8 +30,8 @@ export class Save implements Command {
     return 'save_cache';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.SAVE;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.SAVE;
   }
 }
 

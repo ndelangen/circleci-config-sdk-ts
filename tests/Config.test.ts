@@ -1,7 +1,8 @@
+import fs from 'node:fs';
 import * as YAML from 'yaml';
 import * as CircleCI from '../src/index';
-import { version as SDKVersion } from '../package-version.json';
-import fs from 'fs';
+import { version as SDKVersion } from '../src/version';
+import { describe, it, expect, afterAll } from 'vitest';
 
 describe('Generate a Setup workflow config', () => {
   const myConfig = new CircleCI.Config(true).stringify();
@@ -111,7 +112,7 @@ describe('Parse a fully complete config', () => {
   myConfig.addWorkflow(myWorkflow);
 
   it('Should have the correct static properties', () => {
-    expect(myConfig.generableType).toBe(CircleCI.mapping.GenerableType.CONFIG);
+    expect(myConfig.generableType).toBe(CircleCI.mapping.GenerableEnum.CONFIG);
   });
 });
 

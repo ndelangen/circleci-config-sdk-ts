@@ -1,18 +1,18 @@
-import { GenerableType } from '../../Config/exports/Mapping';
-import { Command } from '../Commands/exports/Command';
-import { Executable } from '../Executors/types/ExecutorParameters.types';
-import { Generable } from '../index';
+import { GenerableEnum } from '../../Config/exports/Mapping';
+import { type Command } from '../Commands/exports/Command';
+import { type Executable } from '../Executors/types/ExecutorParameters.types';
+import { type Generable } from '../index';
 import {
-  BooleanParameter,
-  EnvironmentParameter,
-  IntegerParameter,
-  StringParameter,
+  type BooleanParameter,
+  type EnvironmentParameter,
+  type IntegerParameter,
+  type StringParameter,
 } from '../Parameters/types';
 import {
-  AnyExecutor,
-  JobContentsShape,
-  JobOptionalProperties,
-  JobsShape,
+  type AnyExecutor,
+  type JobContentsShape,
+  type JobOptionalProperties,
+  type JobsShape,
 } from './types/Job.types';
 
 /**
@@ -130,7 +130,7 @@ export class Job implements Generable, Executable {
     return this;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.JOB;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.JOB;
   }
 }

@@ -1,6 +1,7 @@
 import * as YAML from 'yaml';
 import { DocumentOptions } from 'yaml';
 import * as CircleCI from '../src/index';
+import { describe, it, expect } from 'vitest';
 
 describe('Instantiate a Run step', () => {
   const run = new CircleCI.commands.Run({
@@ -36,7 +37,7 @@ describe('Instantiate a Run step', () => {
   });
 
   it('Should have the correct static properties', () => {
-    expect(run.generableType).toBe(CircleCI.mapping.GenerableType.RUN);
+    expect(run.generableType).toBe(CircleCI.mapping.GenerableEnum.RUN);
     expect(run.name).toBe('run');
   });
 });
@@ -59,7 +60,7 @@ describe('Instantiate a Checkout step', () => {
 
   it('Should have the correct static properties', () => {
     expect(checkout.generableType).toBe(
-      CircleCI.mapping.GenerableType.CHECKOUT
+      CircleCI.mapping.GenerableEnum.CHECKOUT
     );
     expect(checkout.name).toBe('checkout');
   });
@@ -79,7 +80,7 @@ describe('Instantiate a Setup_Remote_Docker step', () => {
 
   it('Should have the correct static properties', () => {
     expect(srdExample.generableType).toBe(
-      CircleCI.mapping.GenerableType.SETUP_REMOTE_DOCKER
+      CircleCI.mapping.GenerableEnum.SETUP_REMOTE_DOCKER
     );
     expect(srdExample.name).toBe('setup_remote_docker');
   });
@@ -143,13 +144,13 @@ describe('Save and load cache', () => {
   });
 
   it('Should have the correct static properties for save_cache', () => {
-    expect(save_cache.generableType).toBe(CircleCI.mapping.GenerableType.SAVE);
+    expect(save_cache.generableType).toBe(CircleCI.mapping.GenerableEnum.SAVE);
     expect(save_cache.name).toBe('save_cache');
   });
 
   it('Should have the correct static properties for restore_cache', () => {
     expect(restore_cache.generableType).toBe(
-      CircleCI.mapping.GenerableType.RESTORE
+      CircleCI.mapping.GenerableEnum.RESTORE
     );
     expect(restore_cache.name).toBe('restore_cache');
   });
@@ -173,7 +174,7 @@ describe('Store artifacts', () => {
 
   it('Should have the correct static properties', () => {
     expect(storeExample.generableType).toBe(
-      CircleCI.mapping.GenerableType.STORE_ARTIFACTS
+      CircleCI.mapping.GenerableEnum.STORE_ARTIFACTS
     );
     expect(storeExample.name).toBe('store_artifacts');
   });
@@ -191,7 +192,7 @@ describe('Store test results', () => {
 
   it('Should have the correct static properties', () => {
     expect(storeTestResults.generableType).toBe(
-      CircleCI.mapping.GenerableType.STORE_TEST_RESULTS
+      CircleCI.mapping.GenerableEnum.STORE_TEST_RESULTS
     );
     expect(storeTestResults.name).toBe('store_test_results');
   });
@@ -213,7 +214,7 @@ describe('Add SSH Keys', () => {
 
   it('Should have correct properties', () => {
     expect(addSSHKeys.generableType).toBe(
-      CircleCI.mapping.GenerableType.ADD_SSH_KEYS
+      CircleCI.mapping.GenerableEnum.ADD_SSH_KEYS
     );
     expect(addSSHKeys.name).toBe('add_ssh_keys');
   });
@@ -239,7 +240,7 @@ describe('Instantiate a Custom Command without parameters', () => {
 
   it('Should have the correct static properties', () => {
     expect(reusableCommand.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSABLE_COMMAND
+      CircleCI.mapping.GenerableEnum.REUSABLE_COMMAND
     );
   });
 });
@@ -303,7 +304,7 @@ describe('Instantiate a Reusable Command', () => {
 
   it('Should have the correct static properties', () => {
     expect(reusedCommand.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSED_COMMAND
+      CircleCI.mapping.GenerableEnum.REUSED_COMMAND
     );
   });
 
@@ -394,7 +395,7 @@ describe('Instantiate reusable commands', () => {
 
   it('Should have the correct static properties', () => {
     expect(firstReusableCommand.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSABLE_COMMAND
+      CircleCI.mapping.GenerableEnum.REUSABLE_COMMAND
     );
   });
 
@@ -573,14 +574,14 @@ describe('Instantiate a Run command with 70 characters in the command string and
 
   it('Should have the correct static properties for attach workspace', () => {
     expect(attachWorkspace.steps[0].generableType).toBe(
-      CircleCI.mapping.GenerableType.ATTACH
+      CircleCI.mapping.GenerableEnum.ATTACH
     );
     expect(attachWorkspace.steps[0].name).toBe('attach_workspace');
   });
 
   it('Should have the correct static properties for persist', () => {
     expect(persistWorkspace.steps[0].generableType).toBe(
-      CircleCI.mapping.GenerableType.PERSIST
+      CircleCI.mapping.GenerableEnum.PERSIST
     );
     expect(persistWorkspace.steps[0].name).toBe('persist_to_workspace');
   });

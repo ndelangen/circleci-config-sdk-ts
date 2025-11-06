@@ -1,9 +1,12 @@
-import { Generable } from '../..';
-import { GenerableType } from '../../../Config/exports/Mapping';
-import { Command } from '../../Commands/types/Command.types';
+import { type Generable } from '../..';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
+import { type Command } from '../../Commands/types/Command.types';
 import { ReusedExecutor } from '../../Reusable';
-import { CustomParameterContentsShape, CustomParameterShape } from '../types';
-import { AnyParameterLiteral } from '../types/CustomParameterLiterals.types';
+import {
+  type CustomParameterContentsShape,
+  type CustomParameterShape,
+} from '../types';
+import { type AnyParameterLiteral } from '../types/CustomParameterLiterals.types';
 
 /**
  * Accepted parameters can be assigned to a component.
@@ -61,7 +64,7 @@ export class CustomParameter<ParameterTypeLiteral extends AnyParameterLiteral>
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.CUSTOM_PARAMETER;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.CUSTOM_PARAMETER;
   }
 }

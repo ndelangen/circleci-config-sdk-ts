@@ -1,7 +1,10 @@
-import { GenerableType } from '../../../../../Config/exports/Mapping';
-import { StringParameter } from '../../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../../types/Command.types';
-import { Command } from '../../Command';
+import { GenerableEnum } from '../../../../../Config/exports/Mapping';
+import { type StringParameter } from '../../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../../types/Command.types';
+import { type Command } from '../../Command';
 /**
  * Special step used to attach the workflow’s workspace to the current container. The full contents of the workspace are downloaded and copied into the directory the workspace is being attached at.
  * @see {@link https://circleci.com/docs/configuration-reference#attachworkspace}
@@ -25,8 +28,8 @@ export class Attach implements Command {
     return 'attach_workspace';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.ATTACH;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.ATTACH;
   }
 }
 

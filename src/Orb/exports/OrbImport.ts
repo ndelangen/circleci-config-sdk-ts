@@ -1,13 +1,16 @@
-import { Generable } from '../../Components';
-import { CustomParametersList } from '../../Components/Parameters';
+import { type Generable } from '../../Components';
+import { type CustomParametersList } from '../../Components/Parameters';
 import {
-  AnyParameterLiteral,
-  CommandParameterLiteral,
-  ExecutorParameterLiteral,
-  JobParameterLiteral,
+  type AnyParameterLiteral,
+  type CommandParameterLiteral,
+  type ExecutorParameterLiteral,
+  type JobParameterLiteral,
 } from '../../Components/Parameters/types/CustomParameterLiterals.types';
-import { GenerableType } from '../../Config/exports/Mapping';
-import { OrbDisplayMeta, OrbImportManifest } from '../types/Orb.types';
+import { GenerableEnum } from '../../Config/exports/Mapping';
+import {
+  type OrbDisplayMeta,
+  type OrbImportManifest,
+} from '../types/Orb.types';
 import { OrbRef } from './OrbRef';
 
 /**
@@ -56,8 +59,8 @@ export class OrbImport implements Generable {
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.ORB_IMPORT;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.ORB_IMPORT;
   }
 }
 

@@ -1,11 +1,11 @@
-import { StringParameter } from '../../Parameters/types';
+import { type StringParameter } from '../../Parameters/types';
 import {
-  DockerImageShape,
-  DockerImage,
-  DockerAuth,
-  DockerAuthAWS,
+  type DockerImageShape,
+  type DockerImage,
+  type DockerAuth,
+  type DockerAuthAWS,
 } from '../exports/DockerImage';
-import { AnyResourceClassBase } from './Executor.types';
+import { type AnyResourceClassBase } from './Executor.types';
 /**
  * A JSON representation of the Docker Executor Schema
  * To be converted to YAML
@@ -22,4 +22,9 @@ export type DockerImageMap = {
  */
 export type DockerResourceClass = AnyResourceClassBase;
 
-export { DockerImageShape, DockerImage, DockerAuth, DockerAuthAWS };
+export {
+  type DockerImageShape,
+  type DockerImage,
+  type DockerAuth,
+  type DockerAuthAWS,
+};

@@ -1,4 +1,4 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
 import { ConditionValue, EqualConditionShape } from '../../types';
 import { Condition } from '../Condition';
 
@@ -34,7 +34,7 @@ export class Equal extends Condition {
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.EQUAL;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.EQUAL;
   }
 }

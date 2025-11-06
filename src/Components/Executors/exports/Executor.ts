@@ -1,10 +1,10 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
-import { Generable } from '../../index';
-import { CustomParametersList } from '../../Parameters';
-import { ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
+import { type Generable } from '../../index';
+import { type CustomParametersList } from '../../Parameters';
+import { type ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
 import {
   AnyResourceClass,
-  ExecutorLiteral,
+  type ExecutorLiteral,
   ExecutorShape,
 } from '../types/Executor.types';
 import { ReusableExecutor } from './ReusableExecutor';
@@ -25,7 +25,7 @@ export abstract class Executor<
   constructor(resource_class: ResourceClass) {
     this.resource_class = resource_class;
   }
-  abstract get generableType(): GenerableType;
+  abstract get generableType(): GenerableEnum;
   abstract get executorLiteral(): ExecutorLiteral;
   abstract generateContents(): unknown;
   get generateResourceClass(): ResourceClass | string {

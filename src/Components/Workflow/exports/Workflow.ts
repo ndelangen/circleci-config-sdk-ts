@@ -1,15 +1,15 @@
-import { Generable } from '../..';
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { type Generable } from '../..';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { Job } from '../../Job';
 import { When } from '../../Logic';
-import { Conditional } from '../../Logic/exports/Conditional';
+import { type Conditional } from '../../Logic/exports/Conditional';
 import {
-  WorkflowContentsShape,
-  WorkflowJobParameters,
-  WorkflowsShape,
+  type WorkflowContentsShape,
+  type WorkflowJobParameters,
+  type WorkflowsShape,
 } from '../types';
 import { WorkflowJob } from './WorkflowJob';
-import { WorkflowJobAbstract } from './WorkflowJobAbstract';
+import { type WorkflowJobAbstract } from './WorkflowJobAbstract';
 import { WorkflowJobApproval } from './WorkflowJobApproval';
 
 /**
@@ -96,7 +96,7 @@ export class Workflow implements Generable, Conditional {
     return this;
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.WORKFLOW;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.WORKFLOW;
   }
 }

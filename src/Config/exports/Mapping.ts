@@ -1,4 +1,4 @@
-export enum GenerableType {
+export enum GenerableEnum {
   CONFIG = 'config',
   ORB = 'orb',
   ORB_IMPORT = 'orb_import',
@@ -50,7 +50,7 @@ export enum GenerableType {
   TRUTHY = 'value',
 }
 
-export enum ParameterSubtype {
+export enum ParameterSubEnum {
   STRING = 'string',
   BOOLEAN = 'boolean',
   INTEGER = 'integer',
@@ -59,7 +59,7 @@ export enum ParameterSubtype {
   ENV_VAR_NAME = 'env_var_name',
 }
 
-export enum ParameterizedComponent {
+export enum ParameterizedComponentEnum {
   JOB = '/parameters/components/job',
   COMMAND = '/parameters/components/command',
   EXECUTOR = '/parameters/components/executor',

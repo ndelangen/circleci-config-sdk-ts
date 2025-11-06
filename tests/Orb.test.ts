@@ -1,5 +1,6 @@
 import { parse } from 'yaml';
 import * as CircleCI from '../src/index';
+import { describe, it, expect } from 'vitest';
 
 describe('Use an OrbImport within a config', () => {
   const orbName = 'my-orb';
@@ -49,7 +50,7 @@ describe('Use an OrbImport within a config', () => {
 
   it('OrbImport should have static properties', () => {
     expect(exampleOrb.generableType).toBe(
-      CircleCI.mapping.GenerableType.ORB_IMPORT
+      CircleCI.mapping.GenerableEnum.ORB_IMPORT
     );
   });
 
@@ -62,7 +63,7 @@ describe('Use an OrbImport within a config', () => {
     expect(sayHelloJob.parameters.parameters.length).toBe(1);
     expect(sayHelloJob.orb.name).toBe(orbName);
     expect(sayHelloJob.generableType).toBe(
-      CircleCI.mapping.GenerableType.ORB_REF
+      CircleCI.mapping.GenerableEnum.ORB_REF
     );
   });
 

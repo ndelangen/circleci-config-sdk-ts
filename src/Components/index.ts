@@ -1,4 +1,4 @@
-import { GenerableType } from '../Config/exports/Mapping';
+import { type GenerableEnum } from '../Config/exports/Mapping';
 
 /**
  * @internal
@@ -18,5 +18,5 @@ export interface Generable {
   /**
    * Type of generable object
    */
-  readonly generableType: GenerableType;
+  readonly generableType: GenerableEnum;
 }

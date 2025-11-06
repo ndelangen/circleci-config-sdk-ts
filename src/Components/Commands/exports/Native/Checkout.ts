@@ -1,11 +1,11 @@
-import { GenerableType } from '../../../../Config/exports/Mapping';
-import { StringParameter } from '../../../Parameters/types';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
+import { type StringParameter } from '../../../Parameters/types';
 import {
-  BodylessCommand,
-  CommandParameters,
-  CommandShape,
+  type BodylessCommand,
+  type CommandParameters,
+  type CommandShape,
 } from '../../types/Command.types';
-import { Command } from '../Command';
+import { type Command } from '../Command';
 
 /**
  * A special step used to check out source code to the configured path.
@@ -35,8 +35,8 @@ export class Checkout implements Command {
     return 'checkout';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.CHECKOUT;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.CHECKOUT;
   }
 }
 

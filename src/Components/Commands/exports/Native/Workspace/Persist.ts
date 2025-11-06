@@ -1,7 +1,13 @@
-import { GenerableType } from '../../../../../Config/exports/Mapping';
-import { ListParameter, StringParameter } from '../../../../Parameters/types';
-import { CommandParameters, CommandShape } from '../../../types/Command.types';
-import { Command } from '../../Command';
+import { GenerableEnum } from '../../../../../Config/exports/Mapping';
+import {
+  type ListParameter,
+  type StringParameter,
+} from '../../../../Parameters/types';
+import {
+  type CommandParameters,
+  type CommandShape,
+} from '../../../types/Command.types';
+import { type Command } from '../../Command';
 /**
  * Special step used to Persist the workflow’s workspace to the current container. The full contents of the workspace are downloaded and copied into the directory the workspace is being Persisted at.
  * @see {@link https://circleci.com/docs/configuration-reference#persistworkspace}
@@ -25,8 +31,8 @@ export class Persist implements Command {
     return 'persist_to_workspace';
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.PERSIST;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.PERSIST;
   }
 }
 

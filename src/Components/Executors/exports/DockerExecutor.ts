@@ -1,4 +1,4 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import {
   DockerExecutorContentsShape,
   DockerResourceClass,
@@ -52,8 +52,8 @@ export class DockerExecutor extends Executor {
     return imagesArray.concat(this.serviceImages);
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.DOCKER_EXECUTOR;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.DOCKER_EXECUTOR;
   }
 
   get executorLiteral(): ExecutorLiteral {

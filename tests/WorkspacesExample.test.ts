@@ -1,5 +1,6 @@
 import * as YAML from 'yaml';
 import * as CircleCI from '../src/index';
+import { describe, it, expect } from 'vitest';
 
 describe('Generate a config utilizing workspaces', () => {
   // Create a new CircleCI Config
@@ -63,14 +64,14 @@ describe('Generate a config utilizing workspaces', () => {
 
   it('Should have the correct static properties for attach workspace', () => {
     expect(jobDownstream.steps[0].generableType).toBe(
-      CircleCI.mapping.GenerableType.ATTACH
+      CircleCI.mapping.GenerableEnum.ATTACH
     );
     expect(jobDownstream.steps[0].name).toBe('attach_workspace');
   });
 
   it('Should have the correct static properties for persist', () => {
     expect(jobFlow.steps[0].generableType).toBe(
-      CircleCI.mapping.GenerableType.PERSIST
+      CircleCI.mapping.GenerableEnum.PERSIST
     );
     expect(jobFlow.steps[0].name).toBe('persist_to_workspace');
   });

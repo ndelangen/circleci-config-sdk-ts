@@ -1,4 +1,4 @@
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { CustomEnumParameterContentsShape } from '../types';
 import { EnumParameterLiteral } from '../types/CustomParameterLiterals.types';
 import { CustomParameter } from './CustomParameter';
@@ -32,7 +32,7 @@ export class CustomEnumParameter extends CustomParameter<EnumParameterLiteral> {
     };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.CUSTOM_ENUM_PARAMETER;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.CUSTOM_ENUM_PARAMETER;
   }
 }

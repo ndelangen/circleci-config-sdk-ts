@@ -1,12 +1,12 @@
 import { Job } from '..';
-import { Command } from '../../Commands/exports/Command';
+import { type Command } from '../../Commands/exports/Command';
 import { CustomParametersList } from '../../Parameters';
-import { Parameterized } from '../../Parameters/exports/Parameterized';
-import { JobParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
+import { type Parameterized } from '../../Parameters/exports/Parameterized';
+import { type JobParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
 import {
-  AnyExecutor,
-  JobOptionalProperties,
-  ParameterizedJobContents,
+  type AnyExecutor,
+  type JobOptionalProperties,
+  type ParameterizedJobContents,
 } from '../types/Job.types';
 
 /**

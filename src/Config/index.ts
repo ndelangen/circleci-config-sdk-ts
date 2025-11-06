@@ -1,21 +1,21 @@
 import { isBrowser, isNode } from 'browser-or-node';
 import * as YAML from 'yaml';
 import { version as SDKVersion } from '../version';
-import { Generable } from '../Components';
-import { ReusableCommandShape } from '../Components/Commands/types/Command.types';
+import { type Generable } from '../Components';
+import { type ReusableCommandShape } from '../Components/Commands/types/Command.types';
 import { ReusableExecutor } from '../Components/Executors/exports/ReusableExecutor';
 import { ReusableExecutorsShape } from '../Components/Executors/types/ReusableExecutor.types';
 import { Job } from '../Components/Job';
-import { JobsShape } from '../Components/Job/types/Job.types';
+import { type JobsShape } from '../Components/Job/types/Job.types';
 import { CustomParametersList } from '../Components/Parameters';
-import { Parameterized } from '../Components/Parameters/exports/Parameterized';
+import { type Parameterized } from '../Components/Parameters/exports/Parameterized';
 import { PipelineParameterLiteral } from '../Components/Parameters/types/CustomParameterLiterals.types';
 import { ReusableCommand } from '../Components/Reusable';
 import { Workflow } from '../Components/Workflow/exports/Workflow';
 import { WorkflowsShape } from '../Components/Workflow/types/Workflow.types';
 import { OrbImport } from '../Orb/exports/OrbImport';
 import { OrbImportsShape } from '../Orb/types/Orb.types';
-import { GenerableType } from './exports/Mapping';
+import { GenerableEnum } from './exports/Mapping';
 import { Pipeline } from './Pipeline';
 import {
   CircleCIConfigObject,
@@ -237,8 +237,8 @@ export class Config
     );
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.CONFIG;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.CONFIG;
   }
 
   /**
@@ -247,7 +247,7 @@ export class Config
    * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker#security}
    * @param path - The path to write the config to. ONLY USED IN NODE.JS
    */
-  async writeFile(path?: string) {
+  async writeFile(path?: string): Promise<void> {
     if (isBrowser) {
       const newHandle = await window.showSaveFilePicker({
         suggestedName: 'config.yml',

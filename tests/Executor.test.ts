@@ -1,5 +1,6 @@
 import * as YAML from 'yaml';
 import * as CircleCI from '../src/index';
+import { describe, it, expect } from 'vitest';
 
 describe('Instantiate Docker Executor', () => {
   const docker = new CircleCI.executors.DockerExecutor('cimg/node:lts');
@@ -80,7 +81,7 @@ describe('Instantiate Docker Executor', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(docker.generableType).toBe(
-      CircleCI.mapping.GenerableType.DOCKER_EXECUTOR
+      CircleCI.mapping.GenerableEnum.DOCKER_EXECUTOR
     );
   });
 });
@@ -106,7 +107,7 @@ describe('Instantiate Machine Executor', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(machine.generableType).toBe(
-      CircleCI.mapping.GenerableType.MACHINE_EXECUTOR
+      CircleCI.mapping.GenerableEnum.MACHINE_EXECUTOR
     );
   });
 });
@@ -134,7 +135,7 @@ describe('Instantiate MacOS Executor', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(macos.generableType).toBe(
-      CircleCI.mapping.GenerableType.MACOS_EXECUTOR
+      CircleCI.mapping.GenerableEnum.MACOS_EXECUTOR
     );
   });
 });
@@ -187,7 +188,7 @@ describe('Instantiate Windows Executor and override shell', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(windows.generableType).toBe(
-      CircleCI.mapping.GenerableType.WINDOWS_EXECUTOR
+      CircleCI.mapping.GenerableEnum.WINDOWS_EXECUTOR
     );
   });
 });
@@ -331,7 +332,7 @@ describe('Generate a config with a Reusable Executor with parameters', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(reusable.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSABLE_EXECUTOR
+      CircleCI.mapping.GenerableEnum.REUSABLE_EXECUTOR
     );
   });
 });
@@ -361,7 +362,7 @@ describe('Generate a config with a Reusable Executor', () => {
 
   it('Should have correct static properties', () => {
     expect(reusedBase.generableType).toEqual(
-      CircleCI.mapping.GenerableType.REUSED_EXECUTOR
+      CircleCI.mapping.GenerableEnum.REUSED_EXECUTOR
     );
     expect(
       reusedBase.executor instanceof CircleCI.reusable.ReusableExecutor
@@ -371,7 +372,7 @@ describe('Generate a config with a Reusable Executor', () => {
 
   it('Should have correct static properties', () => {
     expect(reusedBase.generableType).toEqual(
-      CircleCI.mapping.GenerableType.REUSED_EXECUTOR
+      CircleCI.mapping.GenerableEnum.REUSED_EXECUTOR
     );
     expect(
       reusedBase.executor instanceof CircleCI.reusable.ReusableExecutor

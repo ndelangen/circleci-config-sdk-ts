@@ -1,2 +1,2 @@
-export { Restore, RestoreCacheParameters } from './Restore';
-export { Save, SaveCacheParameters } from './Save';
+export { Restore, type RestoreCacheParameters } from './Restore';
+export { Save, type SaveCacheParameters } from './Save';

@@ -1,5 +1,5 @@
 import { Executor } from '..';
-import { GenerableType } from '../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../Config/exports/Mapping';
 import { AnyExecutor } from '../../Job/types/Job.types';
 import { CustomParametersList } from '../../Parameters';
 import { ExecutorParameterLiteral } from '../../Parameters/types/CustomParameterLiterals.types';
@@ -78,7 +78,7 @@ export type ReusableExecutorDependencies = {
 
 export type ExecutorSubtypeMap = {
   [key in ExecutorUsageLiteral | 'windows']: {
-    generableType: GenerableType;
+    generableType: GenerableEnum;
     parse: ExecutorSubtypeParser;
   };
 };
@@ -91,6 +91,6 @@ export type ExecutorSubtypeParser = (
 ) => AnyExecutor;
 
 export {
-  ExecutableParameters,
-  ExecutableProperties,
+  type ExecutableParameters,
+  type ExecutableProperties,
 } from './ExecutorParameters.types';

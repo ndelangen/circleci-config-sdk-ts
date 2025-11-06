@@ -1,5 +1,5 @@
 import { identityOrTruthy } from '.';
-import { GenerableType } from '../../../../Config/exports/Mapping';
+import { GenerableEnum } from '../../../../Config/exports/Mapping';
 import { ConditionOrValue, NotConditionShape } from '../../types';
 import { Condition } from '../Condition';
 
@@ -23,7 +23,7 @@ export class Not extends Condition {
     return { not: this.condition.generate() };
   }
 
-  get generableType(): GenerableType {
-    return GenerableType.NOT;
+  get generableType(): GenerableEnum {
+    return GenerableEnum.NOT;
   }
 }

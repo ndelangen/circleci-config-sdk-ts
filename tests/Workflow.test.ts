@@ -1,5 +1,6 @@
 import * as CircleCI from '../src/index';
 import * as YAML from 'yaml';
+import { describe, it, expect } from 'vitest';
 
 describe('Instantiate Workflow', () => {
   const docker = new CircleCI.executors.DockerExecutor('cimg/node:lts');
@@ -120,9 +121,9 @@ describe('Instantiate a new Workflow with a when condition', () => {
   });
   it('Should have the correct static properties', () => {
     expect(workflowJob.generableType).toBe(
-      CircleCI.mapping.GenerableType.WORKFLOW_JOB
+      CircleCI.mapping.GenerableEnum.WORKFLOW_JOB
     );
-    expect(when.generableType).toBe(CircleCI.mapping.GenerableType.WHEN);
+    expect(when.generableType).toBe(CircleCI.mapping.GenerableEnum.WHEN);
   });
 });
 
@@ -262,7 +263,7 @@ describe('Instantiate a Workflow with 2 jobs', () => {
 
   it('Should have the correct static properties', () => {
     expect(myWorkflow.generableType).toBe(
-      CircleCI.mapping.GenerableType.WORKFLOW
+      CircleCI.mapping.GenerableEnum.WORKFLOW
     );
   });
 });

@@ -35,7 +35,7 @@ describe('Instantiate Docker Executor', () => {
   });
 
   const dockerWithMultipleImage = new CircleCI.executors.DockerExecutor(
-    'cimg/node:lts',
+    'cimg/node:lts'
   );
   dockerWithMultipleImage.addServiceImage({
     image: 'cimg/mysql:5.7',
@@ -54,13 +54,13 @@ describe('Instantiate Docker Executor', () => {
 
   it('Should match the expected outputh with two images', () => {
     expect(dockerWithMultipleImage.generate()).toEqual(
-      expectedShapeWithMultipleImage,
+      expectedShapeWithMultipleImage
     );
   });
 
   const reusableExecutor = new CircleCI.reusable.ReusableExecutor(
     'default',
-    docker,
+    docker
   );
 
   it('Add executor to config and validate', () => {
@@ -80,7 +80,7 @@ describe('Instantiate Docker Executor', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(docker.generableType).toBe(
-      CircleCI.mapping.GenerableType.DOCKER_EXECUTOR,
+      CircleCI.mapping.GenerableType.DOCKER_EXECUTOR
     );
   });
 });
@@ -99,14 +99,14 @@ describe('Instantiate Machine Executor', () => {
   it('Add executor to config and validate', () => {
     const myConfig = new CircleCI.Config();
     myConfig.addReusableExecutor(
-      new CircleCI.reusable.ReusableExecutor('default', machine),
+      new CircleCI.reusable.ReusableExecutor('default', machine)
     );
     expect(myConfig.executors?.length).toBeGreaterThan(0);
   });
 
   it('Should have the correct static properties for persist', () => {
     expect(machine.generableType).toBe(
-      CircleCI.mapping.GenerableType.MACHINE_EXECUTOR,
+      CircleCI.mapping.GenerableType.MACHINE_EXECUTOR
     );
   });
 });
@@ -127,14 +127,14 @@ describe('Instantiate MacOS Executor', () => {
   it('Add executor to config and validate', () => {
     const myConfig = new CircleCI.Config();
     myConfig.addReusableExecutor(
-      new CircleCI.reusable.ReusableExecutor('default', macos),
+      new CircleCI.reusable.ReusableExecutor('default', macos)
     );
     expect(myConfig.executors?.length).toBeGreaterThan(0);
   });
 
   it('Should have the correct static properties for persist', () => {
     expect(macos.generableType).toBe(
-      CircleCI.mapping.GenerableType.MACOS_EXECUTOR,
+      CircleCI.mapping.GenerableType.MACOS_EXECUTOR
     );
   });
 });
@@ -155,7 +155,7 @@ describe('Instantiate Large MacOS Executor', () => {
   it('Add executor to config and validate', () => {
     const myConfig = new CircleCI.Config();
     myConfig.addReusableExecutor(
-      new CircleCI.reusable.ReusableExecutor('default', macos),
+      new CircleCI.reusable.ReusableExecutor('default', macos)
     );
     expect(myConfig.executors?.length).toBeGreaterThan(0);
   });
@@ -187,7 +187,7 @@ describe('Instantiate Windows Executor and override shell', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(windows.generableType).toBe(
-      CircleCI.mapping.GenerableType.WINDOWS_EXECUTOR,
+      CircleCI.mapping.GenerableType.WINDOWS_EXECUTOR
     );
   });
 });
@@ -209,7 +209,7 @@ describe('Instantiate Windows Executor', () => {
   it('Add executor to config and validate', () => {
     const myConfig = new CircleCI.Config();
     myConfig.addReusableExecutor(
-      new CircleCI.reusable.ReusableExecutor('default', windows),
+      new CircleCI.reusable.ReusableExecutor('default', windows)
     );
     expect(myConfig.executors?.length).toBeGreaterThan(0);
   });
@@ -218,7 +218,7 @@ describe('Instantiate Windows Executor', () => {
 describe('Instantiate a 2xlarge Docker Executor', () => {
   const xxlDocker = new CircleCI.executors.DockerExecutor(
     'cimg/node:lts',
-    '2xlarge',
+    '2xlarge'
   );
 
   const expectedShape = {
@@ -233,7 +233,7 @@ describe('Instantiate a 2xlarge Docker Executor', () => {
   it('Add executor to config and validate', () => {
     const myConfig = new CircleCI.Config();
     myConfig.addReusableExecutor(
-      new CircleCI.reusable.ReusableExecutor('default', xxlDocker),
+      new CircleCI.reusable.ReusableExecutor('default', xxlDocker)
     );
     expect(myConfig.executors?.length).toBeGreaterThan(0);
   });
@@ -268,10 +268,10 @@ describe('Instantiate Large Machine Executor', () => {
     const myConfig = new CircleCI.Config();
     myConfig
       .addReusableExecutor(
-        new CircleCI.reusable.ReusableExecutor('machine_large', machineLarge),
+        new CircleCI.reusable.ReusableExecutor('machine_large', machineLarge)
       )
       .addReusableExecutor(
-        new CircleCI.reusable.ReusableExecutor('machine_medium', machineMedium),
+        new CircleCI.reusable.ReusableExecutor('machine_medium', machineMedium)
       );
     expect(myConfig.executors?.length).toBe(2);
   });
@@ -282,7 +282,7 @@ describe('Generate a config with a Reusable Executor with parameters', () => {
   const reusable = new CircleCI.reusable.ReusableExecutor(
     'default',
     machine,
-    new CircleCI.parameters.CustomParametersList(),
+    new CircleCI.parameters.CustomParametersList()
   );
   const expectedUsageShape = {
     executor: 'default',
@@ -331,7 +331,7 @@ describe('Generate a config with a Reusable Executor with parameters', () => {
 
   it('Should have the correct static properties for persist', () => {
     expect(reusable.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSABLE_EXECUTOR,
+      CircleCI.mapping.GenerableType.REUSABLE_EXECUTOR
     );
   });
 });
@@ -340,15 +340,15 @@ describe('Generate a config with a Reusable Executor', () => {
   const myConfig = new CircleCI.Config();
 
   const machine = new CircleCI.executors.MachineExecutor(
-    'large',
+    'large'
   ).setDockerLayerCaching(true);
 
   const dockerBase = new CircleCI.executors.DockerExecutor(
-    'cimg/base:<< parameters.tag >>',
+    'cimg/base:<< parameters.tag >>'
   );
   const reusableMachine = new CircleCI.reusable.ReusableExecutor(
     'default',
-    machine,
+    machine
   );
 
   const reusableBase = dockerBase.toReusable('base');
@@ -361,20 +361,20 @@ describe('Generate a config with a Reusable Executor', () => {
 
   it('Should have correct static properties', () => {
     expect(reusedBase.generableType).toEqual(
-      CircleCI.mapping.GenerableType.REUSED_EXECUTOR,
+      CircleCI.mapping.GenerableType.REUSED_EXECUTOR
     );
     expect(
-      reusedBase.executor instanceof CircleCI.reusable.ReusableExecutor,
+      reusedBase.executor instanceof CircleCI.reusable.ReusableExecutor
     ).toEqual(true);
     expect(reusedBase.parameters === undefined).toEqual(true);
   });
 
   it('Should have correct static properties', () => {
     expect(reusedBase.generableType).toEqual(
-      CircleCI.mapping.GenerableType.REUSED_EXECUTOR,
+      CircleCI.mapping.GenerableType.REUSED_EXECUTOR
     );
     expect(
-      reusedBase.executor instanceof CircleCI.reusable.ReusableExecutor,
+      reusedBase.executor instanceof CircleCI.reusable.ReusableExecutor
     ).toEqual(true);
     expect(reusedBase.parameters === undefined).toEqual(true);
   });

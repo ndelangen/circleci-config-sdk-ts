@@ -67,7 +67,7 @@ describe('Check Pipeline Project Parameters (mock GitHub)', () => {
       'https://github.com/CircleCI-Public/circleci-config-sdk-ts';
     const GHProject = new CircleCI.Pipeline();
     expect(GHProject.project().git_url).toEqual(
-      'https://github.com/CircleCI-Public/circleci-config-sdk-ts',
+      'https://github.com/CircleCI-Public/circleci-config-sdk-ts'
     );
   });
 });
@@ -78,7 +78,7 @@ describe('Check Pipeline Project Parameters (mock BitBucket)', () => {
     process.env.CIRCLE_REPOSITORY_URL = 'https://bitbucket.com/org/repo';
     const GHProject = new CircleCI.Pipeline();
     expect(GHProject.project().git_url).toEqual(
-      'https://bitbucket.com/org/repo',
+      'https://bitbucket.com/org/repo'
     );
     expect(GHProject.project().vcs).toEqual('bitbucket');
   });
@@ -93,7 +93,7 @@ describe('Check Pipeline Project Parameters (mock Unsupported)', () => {
         'https://notarealwebsite.com/org/repo';
       GHProject.project().vcs;
     }).toThrow(
-      'Unrecognized VCS provider while obtaining Pipeline.Project.VCS from URL https://notarealwebsite.com/org/repo',
+      'Unrecognized VCS provider while obtaining Pipeline.Project.VCS from URL https://notarealwebsite.com/org/repo'
     );
   });
 });

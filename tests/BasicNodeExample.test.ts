@@ -20,13 +20,13 @@ describe('Generate a Hello World config', () => {
       new CircleCI.commands.Run({
         command: 'npm install',
         name: 'NPM Install',
-      }),
+      })
     )
     .addStep(
       new CircleCI.commands.Run({
         command: 'npm run test',
         name: 'Run tests',
-      }),
+      })
     );
 
   // Add Jobs to Workflow

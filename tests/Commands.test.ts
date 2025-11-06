@@ -59,7 +59,7 @@ describe('Instantiate a Checkout step', () => {
 
   it('Should have the correct static properties', () => {
     expect(checkout.generableType).toBe(
-      CircleCI.mapping.GenerableType.CHECKOUT,
+      CircleCI.mapping.GenerableType.CHECKOUT
     );
     expect(checkout.name).toBe('checkout');
   });
@@ -79,13 +79,13 @@ describe('Instantiate a Setup_Remote_Docker step', () => {
 
   it('Should have the correct static properties', () => {
     expect(srdExample.generableType).toBe(
-      CircleCI.mapping.GenerableType.SETUP_REMOTE_DOCKER,
+      CircleCI.mapping.GenerableType.SETUP_REMOTE_DOCKER
     );
     expect(srdExample.name).toBe('setup_remote_docker');
   });
 
-  const srdWithDlcExample =
-    new CircleCI.commands.SetupRemoteDocker().setDockerLayerCaching(true);
+  const srdWithDlcExample = new CircleCI.commands
+    .SetupRemoteDocker().setDockerLayerCaching(true);
 
   const srdWithDlcResult = {
     setup_remote_docker: {
@@ -149,7 +149,7 @@ describe('Save and load cache', () => {
 
   it('Should have the correct static properties for restore_cache', () => {
     expect(restore_cache.generableType).toBe(
-      CircleCI.mapping.GenerableType.RESTORE,
+      CircleCI.mapping.GenerableType.RESTORE
     );
     expect(restore_cache.name).toBe('restore_cache');
   });
@@ -173,7 +173,7 @@ describe('Store artifacts', () => {
 
   it('Should have the correct static properties', () => {
     expect(storeExample.generableType).toBe(
-      CircleCI.mapping.GenerableType.STORE_ARTIFACTS,
+      CircleCI.mapping.GenerableType.STORE_ARTIFACTS
     );
     expect(storeExample.name).toBe('store_artifacts');
   });
@@ -191,7 +191,7 @@ describe('Store test results', () => {
 
   it('Should have the correct static properties', () => {
     expect(storeTestResults.generableType).toBe(
-      CircleCI.mapping.GenerableType.STORE_TEST_RESULTS,
+      CircleCI.mapping.GenerableType.STORE_TEST_RESULTS
     );
     expect(storeTestResults.name).toBe('store_test_results');
   });
@@ -213,7 +213,7 @@ describe('Add SSH Keys', () => {
 
   it('Should have correct properties', () => {
     expect(addSSHKeys.generableType).toBe(
-      CircleCI.mapping.GenerableType.ADD_SSH_KEYS,
+      CircleCI.mapping.GenerableType.ADD_SSH_KEYS
     );
     expect(addSSHKeys.name).toBe('add_ssh_keys');
   });
@@ -239,7 +239,7 @@ describe('Instantiate a Custom Command without parameters', () => {
 
   it('Should have the correct static properties', () => {
     expect(reusableCommand.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSABLE_COMMAND,
+      CircleCI.mapping.GenerableType.REUSABLE_COMMAND
     );
   });
 });
@@ -278,7 +278,7 @@ describe('Instantiate a Reusable Command', () => {
     [helloWorld],
     new CircleCI.parameters.CustomParametersList([
       new CircleCI.parameters.CustomParameter('greeting', 'string'),
-    ]),
+    ])
   );
 
   const reusedCommand = new CircleCI.reusable.ReusedCommand(reusableCommand, {
@@ -293,7 +293,7 @@ describe('Instantiate a Reusable Command', () => {
 
   it('Should generate a reused command from toReused', () => {
     expect(reusableCommand.toReused({ greeting: 'hello world' })).toEqual(
-      reusedCommand,
+      reusedCommand
     );
   });
 
@@ -303,7 +303,7 @@ describe('Instantiate a Reusable Command', () => {
 
   it('Should have the correct static properties', () => {
     expect(reusedCommand.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSED_COMMAND,
+      CircleCI.mapping.GenerableType.REUSED_COMMAND
     );
   });
 
@@ -312,7 +312,7 @@ describe('Instantiate a Reusable Command', () => {
       reusableCommand.name,
       {
         greeting: 'hello world',
-      },
+      }
     );
 
     expect(reusedCommandByName.generate()).toEqual(expected);
@@ -323,7 +323,7 @@ describe('Instantiate a Reusable Command', () => {
  */
 describe('Instantiate reusable commands', () => {
   const firstReusableCommand = new CircleCI.reusable.ReusableCommand(
-    'point_direction',
+    'point_direction'
   );
 
   firstReusableCommand
@@ -332,7 +332,7 @@ describe('Instantiate reusable commands', () => {
     .addStep(
       new CircleCI.commands.Run({
         command: 'echo << parameters.axis >>',
-      }),
+      })
     );
 
   it('Should match generated yaml', () => {
@@ -349,12 +349,12 @@ describe('Instantiate reusable commands', () => {
       - run: echo << parameters.axis >>`;
 
     expect(firstReusableCommand.generate(true)).toEqual(
-      YAML.parse(firstExpectedOutput),
+      YAML.parse(firstExpectedOutput)
     );
   });
 
   const secondReusableCommand = new CircleCI.reusable.ReusableCommand(
-    'search_year',
+    'search_year'
   );
 
   secondReusableCommand
@@ -363,7 +363,7 @@ describe('Instantiate reusable commands', () => {
     .addStep(
       new CircleCI.commands.Run({
         command: 'echo << parameters.year >>',
-      }),
+      })
     );
 
   it('Should match generated yaml', () => {
@@ -378,7 +378,7 @@ describe('Instantiate reusable commands', () => {
       - run: echo << parameters.year >>`;
 
     expect(secondReusableCommand.generate(true)).toEqual(
-      YAML.parse(secondExpectedOutput),
+      YAML.parse(secondExpectedOutput)
     );
   });
 
@@ -394,7 +394,7 @@ describe('Instantiate reusable commands', () => {
 
   it('Should have the correct static properties', () => {
     expect(firstReusableCommand.generableType).toBe(
-      CircleCI.mapping.GenerableType.REUSABLE_COMMAND,
+      CircleCI.mapping.GenerableType.REUSABLE_COMMAND
     );
   });
 
@@ -522,7 +522,7 @@ echo hello world 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 this string is a single
 `;
   it('Should match expectedOutput', () => {
     expect(
-      YAML.stringify(multiLineCommand.generate(true), stringifyOptions),
+      YAML.stringify(multiLineCommand.generate(true), stringifyOptions)
     ).toEqual(expectedOutput);
   });
 });
@@ -548,7 +548,7 @@ describe('Instantiate a Run command with 70 characters in the command string and
 `;
   it('Should match expectedOutput', () => {
     expect(
-      YAML.stringify(longCommand.generate(true), stringifyOptions),
+      YAML.stringify(longCommand.generate(true), stringifyOptions)
     ).toEqual(expectedOutput);
   });
 });
@@ -568,19 +568,19 @@ describe('Instantiate a Run command with 70 characters in the command string and
         root: 'workspace',
         paths: ['echo-output'],
       }),
-    ],
+    ]
   );
 
   it('Should have the correct static properties for attach workspace', () => {
     expect(attachWorkspace.steps[0].generableType).toBe(
-      CircleCI.mapping.GenerableType.ATTACH,
+      CircleCI.mapping.GenerableType.ATTACH
     );
     expect(attachWorkspace.steps[0].name).toBe('attach_workspace');
   });
 
   it('Should have the correct static properties for persist', () => {
     expect(persistWorkspace.steps[0].generableType).toBe(
-      CircleCI.mapping.GenerableType.PERSIST,
+      CircleCI.mapping.GenerableType.PERSIST
     );
     expect(persistWorkspace.steps[0].name).toBe('persist_to_workspace');
   });

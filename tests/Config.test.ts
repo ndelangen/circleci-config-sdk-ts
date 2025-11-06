@@ -61,11 +61,11 @@ describe('Parse a fully complete config', () => {
   myConfig.defineParameter('greeting', 'string', 'hello world!');
 
   const docker = new CircleCI.executors.DockerExecutor(
-    'cimg/node:<< parameters.version >>',
+    'cimg/node:<< parameters.version >>'
   );
   const reusableDocker = new CircleCI.reusable.ReusableExecutor(
     'docker',
-    docker,
+    docker
   );
 
   reusableDocker.defineParameter('version', 'string', '16.3');
@@ -80,7 +80,7 @@ describe('Parse a fully complete config', () => {
     ],
     new CircleCI.parameters.CustomParametersList([
       new CircleCI.parameters.CustomParameter('greeting', 'string'),
-    ]),
+    ])
   );
 
   myConfig.addReusableCommand(reusableCommand);
@@ -92,7 +92,7 @@ describe('Parse a fully complete config', () => {
       new CircleCI.reusable.ReusedCommand(reusableCommand, {
         greeting: '<< pipeline.parameters.greeting >>',
       }),
-    ],
+    ]
   );
   const jobB = new CircleCI.Job('my-job-B', reusableDocker.reuse(), [
     new CircleCI.reusable.ReusedCommand(reusableCommand, {

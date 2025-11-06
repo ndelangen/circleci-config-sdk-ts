@@ -29,7 +29,7 @@ describe('Use an OrbImport within a config', () => {
     orbName,
     orbVersion,
     undefined,
-    manifest,
+    manifest
   );
 
   const exampleOrb2 = new CircleCI.orb.OrbImport(
@@ -38,7 +38,7 @@ describe('Use an OrbImport within a config', () => {
     orbName,
     '1.1.1',
     undefined,
-    manifest,
+    manifest
   );
 
   it('Should match expected shape', () => {
@@ -49,7 +49,7 @@ describe('Use an OrbImport within a config', () => {
 
   it('OrbImport should have static properties', () => {
     expect(exampleOrb.generableType).toBe(
-      CircleCI.mapping.GenerableType.ORB_IMPORT,
+      CircleCI.mapping.GenerableType.ORB_IMPORT
     );
   });
 
@@ -62,7 +62,7 @@ describe('Use an OrbImport within a config', () => {
     expect(sayHelloJob.parameters.parameters.length).toBe(1);
     expect(sayHelloJob.orb.name).toBe(orbName);
     expect(sayHelloJob.generableType).toBe(
-      CircleCI.mapping.GenerableType.ORB_REF,
+      CircleCI.mapping.GenerableType.ORB_REF
     );
   });
 
@@ -78,7 +78,7 @@ describe('Use an OrbImport within a config', () => {
       new CircleCI.reusable.ReusedCommand(sayItCommand, {
         what: 'cheese',
       }),
-    ],
+    ]
   );
 
   const workflow = new CircleCI.Workflow('default', [

@@ -88,10 +88,10 @@ describe('Instantiate a new Workflow with a when condition', () => {
     or(
       and(
         '<< parameters.should_retry >>',
-        equal('<< parameters.attempt >>', 3),
+        equal('<< parameters.attempt >>', 3)
       ),
-      not(equal('<< parameters.user >>', 'bob')),
-    ),
+      not(equal('<< parameters.user >>', 'bob'))
+    )
   );
 
   const myWorkflow = new CircleCI.Workflow('my-workflow', [workflowJob], when);
@@ -120,7 +120,7 @@ describe('Instantiate a new Workflow with a when condition', () => {
   });
   it('Should have the correct static properties', () => {
     expect(workflowJob.generableType).toBe(
-      CircleCI.mapping.GenerableType.WORKFLOW_JOB,
+      CircleCI.mapping.GenerableType.WORKFLOW_JOB
     );
     expect(when.generableType).toBe(CircleCI.mapping.GenerableType.WHEN);
   });
@@ -216,7 +216,7 @@ describe('Instantiate Workflow with a manual approval job', () => {
 
   it('Workflow approval should be instanceof WorkflowJobAbstract', () => {
     expect(
-      workflowApproval instanceof CircleCI.workflow.WorkflowJobAbstract,
+      workflowApproval instanceof CircleCI.workflow.WorkflowJobAbstract
     ).toEqual(true);
   });
 });
@@ -262,7 +262,7 @@ describe('Instantiate a Workflow with 2 jobs', () => {
 
   it('Should have the correct static properties', () => {
     expect(myWorkflow.generableType).toBe(
-      CircleCI.mapping.GenerableType.WORKFLOW,
+      CircleCI.mapping.GenerableType.WORKFLOW
     );
   });
 });

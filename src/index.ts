@@ -3,50 +3,50 @@
  * which implement functionality to make them configurable
  * when used in tandem with other components.
  */
-export * as reusable from './lib/Components/Reusable';
+export * as reusable from "./Components/Reusable";
 
 /**
  * Native command components.
  */
-export * as commands from './lib/Components/Commands';
+export * as commands from "./Components/Commands";
 
 /**
  * Parameter Types for reusable components.
  */
-export * as parameters from './lib/Components/Parameters';
+export * as parameters from "./Components/Parameters";
 
 /**
  * Native executor components.
  */
-export * as executors from './lib/Components/Executors';
+export * as executors from "./Components/Executors";
 
 /**
  * Conditional statements for 2.1 config conditionals.
  */
-export * as logic from './lib/Components/Logic';
+export * as logic from "./Components/Logic";
 
 /**
  * All types used in the components.
  */
-export * as types from './lib/Types';
+export * as types from "./Types";
 
 /**
  * Workflow and workflow job components.
  */
-export * as workflow from './lib/Components/Workflow';
+export * as workflow from "./Components/Workflow";
 
 /**
  * All orb components.
  */
-export * as orb from './lib/Orb';
+export * as orb from "./Orb";
 
 /**
  * All type mapping enums
  */
-export * as mapping from './lib/Config/exports/Mapping';
+export * as mapping from "./Config/exports/Mapping";
 
 // Top-level exports
-export { Job } from './lib/Components/Job';
-export { Config } from './lib/Config';
-export { Pipeline } from './lib/Config/Pipeline';
-export { Workflow } from './lib/Components/Workflow/exports/Workflow';
+export { Job } from "./Components/Job";
+export { Config } from "./Config";
+export { Pipeline } from "./Config/Pipeline";
+export { Workflow } from "./Components/Workflow/exports/Workflow";

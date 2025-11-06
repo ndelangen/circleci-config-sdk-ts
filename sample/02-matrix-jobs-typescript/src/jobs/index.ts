@@ -1,5 +1,5 @@
-import * as CircleCI from "@circleci/circleci-config-sdk";
-import { nodeExecutor } from "../executors";
+import * as CircleCI from '@circleci/circleci-config-sdk';
+import { nodeExecutor } from '../executors';
 
 // A function that returns a test job for a given version of Node with a unique name
 const testJob = (version: string) =>
@@ -10,15 +10,11 @@ const testJob = (version: string) =>
     }),
   ]);
 
-const deployJob = new CircleCI.Job(
-  "deploy",
-  nodeExecutor("18"),
-  [
-    new CircleCI.commands.Checkout(),
-    new CircleCI.commands.Run({
-      command: "npm install && npm run deploy"
-    })
-  ]
-)
+const deployJob = new CircleCI.Job('deploy', nodeExecutor('18'), [
+  new CircleCI.commands.Checkout(),
+  new CircleCI.commands.Run({
+    command: 'npm install && npm run deploy',
+  }),
+]);
 
-export { testJob, deployJob }
+export { testJob, deployJob };

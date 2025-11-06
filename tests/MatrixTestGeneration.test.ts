@@ -11,7 +11,7 @@ describe('Generate 3 node-based jobs with different node versions', () => {
 
   nodeVersions.forEach((version) => {
     const docker = new CircleCI.executors.DockerExecutor(
-      `cimg/node:${version}`,
+      `cimg/node:${version}`
     );
     const job = new CircleCI.Job(`test-${version}`, docker, [helloWorld]);
     config.addJob(job);

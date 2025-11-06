@@ -2,14 +2,12 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "preserve",
-    "stripInternal": true,
     "strict": true,
     "resolveJsonModule": true,
     "declaration": true,
     "isolatedDeclarations": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/*.d.ts"]

@@ -1,4 +1,4 @@
-import * as CircleCI from '../src/index';
+import * as CircleCI from '../index';
 import { describe, it, expect } from 'vitest';
 
 // Enforce local testing

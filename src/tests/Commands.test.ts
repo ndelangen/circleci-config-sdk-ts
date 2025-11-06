@@ -1,6 +1,6 @@
 import * as YAML from 'yaml';
 import { DocumentOptions } from 'yaml';
-import * as CircleCI from '../src/index';
+import * as CircleCI from '../index';
 import { describe, it, expect } from 'vitest';
 
 describe('Instantiate a Run step', () => {

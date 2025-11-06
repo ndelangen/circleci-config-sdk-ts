@@ -1,4 +1,4 @@
-import * as CircleCI from '../src/index';
+import * as CircleCI from '../index';
 import { describe, it, expect } from 'vitest';
 
 // Generate a "Matrix" of Jobs with node executors, testing node versions: 13.0.0, 16.0.0, 18.0.0

@@ -1,5 +1,5 @@
 import { parse } from 'yaml';
-import * as CircleCI from '../src/index';
+import * as CircleCI from '../index';
 import { describe, it, expect } from 'vitest';
 
 describe('Use an OrbImport within a config', () => {

@@ -1,5 +1,5 @@
-import * as CircleCI from '../src/index';
-import { DockerExecutor } from '../src/Components/Executors';
+import * as CircleCI from '../index';
+import { DockerExecutor } from '../Components/Executors';
 import { describe, it, expect } from 'vitest';
 
 describe('Use basic custom parameters', () => {

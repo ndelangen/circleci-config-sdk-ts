@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import * as YAML from 'yaml';
-import * as CircleCI from '../src/index';
-import { version as SDKVersion } from '../src/version';
+import * as CircleCI from '../index';
+import { version as SDKVersion } from '../version';
 import { describe, it, expect, afterAll } from 'vitest';
 
 describe('Generate a Setup workflow config', () => {

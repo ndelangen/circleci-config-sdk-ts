@@ -1,6 +1,6 @@
 import * as YAML from 'yaml';
-import * as CircleCI from '../src/index';
-import { GenerableEnum } from '../src/Config/exports/Mapping';
+import * as CircleCI from '../index';
+import { GenerableEnum } from '../Config/exports/Mapping';
 import { describe, it, expect } from 'vitest';
 
 describe('Instantiate Docker Job', () => {
